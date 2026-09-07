@@ -4,7 +4,7 @@ Página pessoal estática inspirada em um perfil fotográfico, pronta para publi
 
 ## Personalização
 
-Edite `profile.js` para alterar nome, descrição, localização e links. Substitua `assets/eu.png` para trocar a fotografia mantendo o mesmo nome de arquivo.
+Edite `profile.ts` para alterar nome, descrição, localização e links. Substitua `assets/eu.png` para trocar a fotografia mantendo o mesmo nome de arquivo.
 
 ### Tag opcional
 
@@ -27,8 +27,11 @@ Cada link aceita uma descrição opcional pelo campo `caption`. Remova o campo q
 ## Uso local
 
 ```bash
+npm ci
 npm run dev
 ```
+
+O código usa TypeScript em modo estrito. `npm run build` compila os módulos e copia os arquivos públicos para `dist/`. Após editar o código, execute o build novamente. `npm run typecheck` verifica os tipos sem gerar arquivos.
 
 ## Validação
 
@@ -42,4 +45,4 @@ O projeto aplica versionamento semântico. Consulte `CHANGELOG.md` para acompanh
 
 ## Publicação
 
-Importe o repositório na Vercel e mantenha as configurações padrão. O projeto não exige comando de build.
+Importe o repositório na Vercel. `vercel.json` define o comando `npm run build` e o diretório de publicação `dist/`.

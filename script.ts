@@ -1,6 +1,6 @@
-import { profile } from "./profile.js";
+import { profile, type SocialIcon } from "./profile.js";
 
-const iconMarkup = {
+const iconMarkup: Record<SocialIcon, string> = {
   instagram: `
     <svg viewBox="0 0 24 24">
       <rect x="3" y="3" width="18" height="18" rx="5"></rect>
@@ -18,18 +18,24 @@ const iconMarkup = {
     </svg>`,
 };
 
-const nameElement = document.querySelector("#profile-name");
-const roleElement = document.querySelector("#profile-role");
-const bioElement = document.querySelector("#profile-bio");
-const locationElement = document.querySelector("#profile-location");
-const tagElement = document.querySelector("#profile-tag");
-const tagLabelElement = document.querySelector("#profile-tag-label");
-const linksElement = document.querySelector("#social-links");
-const template = document.querySelector("#social-link-template");
-const shareButton = document.querySelector("#share-button");
-const toast = document.querySelector("#toast");
+function requiredElement<T extends Element = HTMLElement>(selector: string, root: ParentNode = document): T {
+  const element = root.querySelector<T>(selector);
+  if (!element) throw new Error(`Missing required element: ${selector}`);
+  return element;
+}
 
-const renderName = (name) => {
+const nameElement = requiredElement("#profile-name");
+const roleElement = requiredElement("#profile-role");
+const bioElement = requiredElement("#profile-bio");
+const locationElement = requiredElement("#profile-location");
+const tagElement = requiredElement("#profile-tag");
+const tagLabelElement = requiredElement("#profile-tag-label");
+const linksElement = requiredElement("#social-links");
+const template = requiredElement<HTMLTemplateElement>("#social-link-template");
+const shareButton = requiredElement<HTMLButtonElement>("#share-button");
+const toast = requiredElement("#toast");
+
+const renderName = (name: string) => {
   const parts = name.trim().split(/\s+/);
   const firstName = parts.shift() ?? "";
   const lastName = parts.join(" ");
@@ -58,16 +64,16 @@ const renderProfile = () => {
   }
 
   for (const [index, social] of profile.links.entries()) {
-    const fragment = template.content.cloneNode(true);
-    const link = fragment.querySelector("a");
+    const fragment = template.content.cloneNode(true) as DocumentFragment;
+    const link = requiredElement<HTMLAnchorElement>("a", fragment);
     link.href = social.url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.setAttribute("aria-label", `Abrir ${social.label} em uma nova aba`);
     link.style.setProperty("--delay", `${index * 90 + 320}ms`);
-    fragment.querySelector(".social-icon").innerHTML = iconMarkup[social.icon] ?? iconMarkup.github;
-    fragment.querySelector("strong").textContent = social.label;
-    const captionElement = fragment.querySelector("small");
+    requiredElement(".social-icon", fragment).innerHTML = iconMarkup[social.icon] ?? iconMarkup.github;
+    requiredElement("strong", fragment).textContent = social.label;
+    const captionElement = requiredElement("small", fragment);
     if (social.caption) {
       captionElement.textContent = social.caption;
     } else {
@@ -84,8 +90,8 @@ const renderProfile = () => {
   }
 };
 
-let toastTimer;
-const showToast = (message) => {
+let toastTimer: number | undefined;
+const showToast = (message: string) => {
   window.clearTimeout(toastTimer);
   toast.textContent = message;
   toast.classList.add("is-visible");
@@ -107,10 +113,10 @@ const shareProfile = async () => {
     await navigator.clipboard.writeText(window.location.href);
     showToast("Link copiado.");
   } catch (error) {
-    if (error.name !== "AbortError") showToast("Não foi possível compartilhar.");
+    if (!(error instanceof Error && error.name === "AbortError")) showToast("Não foi possível compartilhar.");
   }
 };
 
 renderProfile();
-document.querySelector("#current-year").textContent = new Date().getFullYear();
+requiredElement("#current-year").textContent = String(new Date().getFullYear());
 shareButton.addEventListener("click", shareProfile);

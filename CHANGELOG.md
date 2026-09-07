@@ -4,6 +4,19 @@ All notable changes to this project are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-09-07
+
+### Added
+
+- Strict TypeScript types for profile configuration, social links and browser interactions.
+- Reproducible development dependencies and a dedicated type checking command.
+
+### Changed
+
+- Edit `profile.ts` instead of `profile.js` to customize the profile.
+- Build the site before serving it; Vercel now publishes compiled files from `dist/`.
+- Existing site checks now validate the compiled output.
+
 ## [1.1.1] - 2026-09-07
 
 ### Fixed
