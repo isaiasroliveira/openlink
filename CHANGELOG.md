@@ -4,6 +4,13 @@ All notable changes to this project are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2026-09-07
+
+### Fixed
+
+- Updated the profile header and favicon monogram from IR to IO.
+- Removed the owner's name from the default page description.
+
 ## [1.1.0] - 2026-09-07
 
 ### Added

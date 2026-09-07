@@ -9,4 +9,4 @@
 - [x] The header monogram displays IO.
 - [x] The favicon identifies the IO monogram.
 - [x] Automated checks prevent the previous initials from returning.
-- [ ] The patch release records the branding correction.
+- [x] The patch release records the branding correction.

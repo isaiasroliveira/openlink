@@ -76,7 +76,8 @@ test("the release version is recorded in package metadata and changelog", async 
   const packageJson = JSON.parse(await readProjectFile("package.json"));
   const changelog = await readProjectFile("CHANGELOG.md");
 
-  assert.equal(packageJson.version, "1.1.0");
+  assert.equal(packageJson.version, "1.1.1");
+  assert.match(changelog, /## \[1\.1\.1\] - 2026-09-07/);
   assert.match(changelog, /## \[1\.1\.0\] - 2026-09-07/);
   assert.match(changelog, /## \[1\.0\.0\] - 2026-09-07/);
 });
