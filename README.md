@@ -11,7 +11,7 @@ Página pessoal estática inspirada em um perfil fotográfico, pronta para publi
 ### Mobile
 
 <p align="center">
-  <img src="docs/screenshots/profile-mobile.png" width="390" alt="Perfil pessoal exibido em uma tela mobile" />
+  <img src="docs/screenshots/mobile_shot.png" width="390" alt="Perfil pessoal exibido em uma tela mobile" />
 </p>
 
 ## Personalização
