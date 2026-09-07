@@ -14,6 +14,13 @@ test("the published page has essential metadata and landmarks", async () => {
   assert.match(html, /<nav[^>]*aria-label="Redes sociais"/);
   assert.match(html, /class="skip-link"/);
   assert.match(html, /rel="icon"/);
+  assert.match(html, />IO<span>\.<\/span><\/a>/);
+});
+
+test("the favicon carries the current profile monogram", async () => {
+  const favicon = await readProjectFile("assets/favicon.svg");
+
+  assert.match(favicon, /<title>IO<\/title>/);
 });
 
 test("the deployment includes a branded way back from missing pages", async () => {
