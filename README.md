@@ -36,6 +36,10 @@ npm run dev
 npm test
 ```
 
+## Versões
+
+O projeto aplica versionamento semântico. Consulte `CHANGELOG.md` para acompanhar cada versão publicada.
+
 ## Publicação
 
 Importe o repositório na Vercel e mantenha as configurações padrão. O projeto não exige comando de build.

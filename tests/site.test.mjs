@@ -64,3 +64,12 @@ test("external links receive safe new-tab attributes", async () => {
   assert.match(script, /target = "_blank"/);
   assert.match(script, /rel = "noopener noreferrer"/);
 });
+
+test("the release version is recorded in package metadata and changelog", async () => {
+  const packageJson = JSON.parse(await readProjectFile("package.json"));
+  const changelog = await readProjectFile("CHANGELOG.md");
+
+  assert.equal(packageJson.version, "1.1.0");
+  assert.match(changelog, /## \[1\.1\.0\] - 2026-09-07/);
+  assert.match(changelog, /## \[1\.0\.0\] - 2026-09-07/);
+});
