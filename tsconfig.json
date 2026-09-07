@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "types": ["vite/client", "node"],
     "lib": ["ES2022", "DOM"],
     "strict": true,
-    "noEmitOnError": true,
-    "outDir": "dist",
-    "rootDir": "."
+    "noEmit": true,
+    "skipLibCheck": true
   },
-  "include": ["script.ts", "profile.ts"]
+  "include": ["*.ts", "*.tsx", "tests/**/*.tsx"]
 }

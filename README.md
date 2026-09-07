@@ -4,7 +4,7 @@ Página pessoal estática inspirada em um perfil fotográfico, pronta para publi
 
 ## Personalização
 
-Edite `profile.ts` para alterar nome, descrição, localização e links. Substitua `assets/eu.png` para trocar a fotografia mantendo o mesmo nome de arquivo.
+Edite `profile.ts` para alterar nome, descrição, localização e links. Substitua `public/assets/eu.png` para trocar a fotografia mantendo o mesmo nome de arquivo.
 
 ### Tag opcional
 
@@ -31,13 +31,17 @@ npm ci
 npm run dev
 ```
 
-O código usa TypeScript em modo estrito. `npm run build` compila os módulos e copia os arquivos públicos para `dist/`. Após editar o código, execute o build novamente. `npm run typecheck` verifica os tipos sem gerar arquivos.
+O código usa React e TypeScript em modo estrito. Vite atualiza a página durante o desenvolvimento. `npm run build` verifica os tipos e gera a versão de produção em `dist/`; `npm run preview` permite conferir esse resultado localmente.
+
+A interface fica em `App.tsx`, os ícones em `icons.tsx` e a inicialização em `main.tsx`. O arquivo `index.html` contém apenas o ponto de entrada e os metadados. `style.css` define os estilos; o navegador recebe JavaScript compilado no build.
 
 ## Validação
 
 ```bash
-npm test
+npm run check
 ```
+
+Os testes em `tests/App.test.tsx` verificam renderização, campos opcionais, destinos dos links, compartilhamento e página 404. `npm run typecheck` verifica os tipos, e `npm test` executa somente os testes.
 
 ## Versões
 

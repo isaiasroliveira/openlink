@@ -11,76 +11,19 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Isaias Oliveira | Links" />
     <meta property="og:description" content="Acompanhe meus projetos e redes sociais." />
-    <meta property="og:image" content="assets/eu.png" />
+    <meta property="og:image" content="/assets/eu.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
     <title>Isaias Oliveira | Links</title>
   </head>
   <body>
-    <a class="skip-link" href="#social-links">Ir para as redes sociais</a>
-    <div class="portrait-stage">
-      <img src="assets/eu.png" alt="Retrato de Isaias" />
-      <div class="portrait-shade"></div>
-      <div class="portrait-grain"></div>
-    </div>
-
-    <main class="profile-shell" id="profile">
-      <header class="topbar">
-        <a class="monogram" href="#profile" aria-label="Voltar ao início">IO<span>.</span></a>
-        <button class="icon-button" id="share-button" type="button" aria-label="Compartilhar esta página">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="18" cy="5" r="2.5"></circle>
-            <circle cx="6" cy="12" r="2.5"></circle>
-            <circle cx="18" cy="19" r="2.5"></circle>
-            <path d="m8.2 10.8 7.6-4.5M8.2 13.2l7.6 4.5"></path>
-          </svg>
-        </button>
-      </header>
-
-      <section class="profile-content" aria-labelledby="profile-name">
-        <div class="availability" id="profile-tag" hidden>
-          <span class="tag-dot" aria-hidden="true"></span>
-          <span id="profile-tag-label"></span>
-        </div>
-
-        <div class="identity-block">
-          <p class="eyebrow" id="profile-role">DESIGN · TECNOLOGIA</p>
-          <h1 id="profile-name">Isaias<br />Rodrigues<span>.</span></h1>
-          <p class="bio" id="profile-bio">Criatividade, estratégia e experiências digitais que aproximam pessoas.</p>
-        </div>
-
-        <nav class="social-links" id="social-links" aria-label="Redes sociais"></nav>
-
-        <footer class="profile-footer">
-          <span id="profile-location">Fortaleza · CE</span>
-          <span class="footer-mark" aria-hidden="true">✦</span>
-          <span>© <span id="current-year"></span></span>
-        </footer>
-      </section>
-    </main>
-
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-    <template id="social-link-template">
-      <a class="social-card">
-        <span class="social-icon" aria-hidden="true"></span>
-        <span class="social-copy">
-          <strong></strong>
-          <small></small>
-        </span>
-        <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M5 12h14M13 6l6 6-6 6"></path>
-        </svg>
-      </a>
-    </template>
-
-    <script type="module" src="script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
   </body>
 </html>

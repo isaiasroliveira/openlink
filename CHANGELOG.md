@@ -4,6 +4,20 @@ All notable changes to this project are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-09-07
+
+### Added
+
+- Typed React components for the profile, social cards, icons and not-found page.
+- TypeScript component tests for optional content, sharing, navigation and error states.
+- Vite development server with live updates and production preview.
+
+### Changed
+
+- Replaced imperative DOM rendering and handwritten JavaScript tooling with TSX and TypeScript.
+- Moved static assets into `public/assets/`.
+- Production builds now bundle React and generate the fallback 404 page.
+
 ## [1.2.0] - 2026-09-07
 
 ### Added
