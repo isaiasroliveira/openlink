@@ -1,7 +1,7 @@
 // Edite somente este objeto para personalizar nome, descrição e destinos.
 export const profile = {
   name: "Isaias Oliveira",
-  role: "Tecnologia na Prática",
+  role: "TECNOLOGIA",
   bio: "Criatividade, estratégia e experiências digitais que aproximam pessoas.",
   location: "Fortaleza, Ceará, Brasil",
   // Use um texto para exibir a tag ou null para ocultá-la.

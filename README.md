@@ -4,7 +4,7 @@ Página pessoal estática inspirada em um perfil fotográfico, pronta para publi
 
 ## Personalização
 
-Edite `profile.js` para alterar nome, descrição, localização e links. Substitua `assets/eu.jpg` para trocar a fotografia mantendo o mesmo nome de arquivo.
+Edite `profile.js` para alterar nome, descrição, localização e links. Substitua `assets/eu.png` para trocar a fotografia mantendo o mesmo nome de arquivo.
 
 ### Tag opcional
 

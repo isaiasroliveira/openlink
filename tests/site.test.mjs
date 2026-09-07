@@ -25,9 +25,9 @@ test("the deployment includes a branded way back from missing pages", async () =
 
 test("the portrait is accessible and available to the browser", async () => {
   const html = await readProjectFile("index.html");
-  const image = await readFile(new URL("../assets/eu.jpg", import.meta.url));
+  const image = await readFile(new URL("../assets/eu.png", import.meta.url));
 
-  assert.match(html, /<img[^>]+src="assets\/eu\.jpg"[^>]+alt="Retrato de Isaias"/);
+  assert.match(html, /<img[^>]+src="assets\/eu\.png"[^>]+alt="Retrato de Isaias"/);
   assert.ok(image.byteLength > 100_000);
 });
 
