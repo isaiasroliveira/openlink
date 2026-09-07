@@ -22,6 +22,8 @@ const nameElement = document.querySelector("#profile-name");
 const roleElement = document.querySelector("#profile-role");
 const bioElement = document.querySelector("#profile-bio");
 const locationElement = document.querySelector("#profile-location");
+const tagElement = document.querySelector("#profile-tag");
+const tagLabelElement = document.querySelector("#profile-tag-label");
 const linksElement = document.querySelector("#social-links");
 const template = document.querySelector("#social-link-template");
 const shareButton = document.querySelector("#share-button");
@@ -48,6 +50,13 @@ const renderProfile = () => {
   locationElement.textContent = profile.location;
   document.title = `${profile.name} | Links`;
 
+  const tag = typeof profile.tag === "string" ? profile.tag.trim() : "";
+  if (tag) {
+    tagLabelElement.textContent = tag;
+    tagElement.setAttribute("aria-label", tag);
+    tagElement.hidden = false;
+  }
+
   for (const [index, social] of profile.links.entries()) {
     const fragment = template.content.cloneNode(true);
     const link = fragment.querySelector("a");
@@ -58,7 +67,12 @@ const renderProfile = () => {
     link.style.setProperty("--delay", `${index * 90 + 320}ms`);
     fragment.querySelector(".social-icon").innerHTML = iconMarkup[social.icon] ?? iconMarkup.github;
     fragment.querySelector("strong").textContent = social.label;
-    fragment.querySelector("small").textContent = social.caption;
+    const captionElement = fragment.querySelector("small");
+    if (social.caption) {
+      captionElement.textContent = social.caption;
+    } else {
+      captionElement.remove();
+    }
     linksElement.append(fragment);
   }
 

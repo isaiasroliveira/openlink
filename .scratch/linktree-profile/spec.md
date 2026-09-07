@@ -17,6 +17,7 @@ Criar uma página estática responsiva com retrato em tela cheia, identidade pes
 5. Como proprietário, quero trocar textos e destinos em um único local, para manter o perfil atualizado.
 6. Como proprietário, quero compartilhar a página, para divulgar meu endereço em outros canais.
 7. Como proprietário, quero publicar arquivos estáticos na Vercel, para evitar configuração de servidor.
+8. Como pessoa que reutiliza o projeto, quero escolher uma tag ou ocultá-la, para adequar a apresentação ao meu momento profissional.
 
 ## Implementation Decisions
 
@@ -24,6 +25,7 @@ Criar uma página estática responsiva com retrato em tela cheia, identidade pes
 - Aplicar a foto fornecida em uma camada de imagem dedicada, com recorte responsivo.
 - Usar uma superfície central limitada em telas grandes e ocupar toda a tela em celulares.
 - Renderizar os links a partir de um objeto de configuração com chaves em inglês.
+- Tratar a tag de perfil e as descrições dos links como conteúdo opcional, sem reservar espaço quando estiverem ausentes.
 - Usar SVGs locais para os ícones e evitar chamadas externas.
 - Implementar compartilhamento nativo com fallback para cópia da URL.
 - Respeitar redução de movimento, contraste, foco visível e áreas de toque.

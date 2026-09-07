@@ -15,7 +15,7 @@
    Do instead: edit identity and social destinations in `profile.js` without touching markup or styles.
 
 ## User Directives
-1. **[2026-09-07] Use Git from project start**
-   Do instead: initialize version control early and preserve changes in small, descriptive English commits.
+1. **[2026-09-07] Use atomic English commits without agent attribution**
+   Do instead: initialize version control early, split work by logical purpose, write descriptive English messages, and omit attribution footers.
 2. **[2026-09-07] Follow the supplied photographic reference**
    Do instead: use `eu.JPG` as the full-bleed portrait and preserve the reference's lower glass panel composition.

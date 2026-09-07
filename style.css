@@ -186,7 +186,11 @@ h1 span {
   animation: enter-up 720ms 130ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.availability span {
+.availability[hidden] {
+  display: none;
+}
+
+.availability .tag-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;

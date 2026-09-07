@@ -27,7 +27,7 @@ test("the portrait is accessible and available to the browser", async () => {
   const html = await readProjectFile("index.html");
   const image = await readFile(new URL("../assets/eu.jpg", import.meta.url));
 
-  assert.match(html, /<img[^>]+src="assets\/eu\.jpg"[^>]+alt="Retrato de Isaias Rodrigues"/);
+  assert.match(html, /<img[^>]+src="assets\/eu\.jpg"[^>]+alt="Retrato de Isaias"/);
   assert.ok(image.byteLength > 100_000);
 });
 
@@ -39,12 +39,23 @@ test("profile configuration contains safe, complete social links", async () => {
   assert.ok(profile.name.length > 1);
   assert.ok(profile.bio.length > 1);
   assert.ok(profile.links.length >= 3);
+  assert.equal(profile.tag, null);
 
   for (const link of profile.links) {
     assert.ok(link.label.length > 1);
     assert.match(link.url, /^https:\/\//);
     assert.ok(link.icon.length > 1);
   }
+});
+
+test("the profile tag and link captions are optional", async () => {
+  const html = await readProjectFile("index.html");
+  const script = await readProjectFile("script.js");
+
+  assert.match(html, /id="profile-tag"[^>]+hidden/);
+  assert.match(script, /profile\.tag/);
+  assert.match(script, /tagElement\.hidden = false/);
+  assert.match(script, /social\.caption/);
 });
 
 test("external links receive safe new-tab attributes", async () => {
