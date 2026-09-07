@@ -1,16 +1,7 @@
-import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { profile, type Profile, type SocialLink } from "./profile";
-import { SocialIconView } from "./icons";
-
-function SocialCard({ link, index }: { link: SocialLink; index: number }) {
-  return <a className="social-card" href={link.url} target="_blank" rel="noopener noreferrer"
-    aria-label={`Abrir ${link.label} em uma nova aba`}
-    style={{ "--delay": `${index * 90 + 320}ms` } as CSSProperties}>
-    <span className="social-icon" aria-hidden="true"><SocialIconView name={link.icon} /></span>
-    <span className="social-copy"><strong>{link.label}</strong>{link.caption && <small>{link.caption}</small>}</span>
-    <svg className="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-  </a>;
-}
+import { useEffect, useRef, useState } from "react";
+import { profile } from "../config/profile";
+import type { Profile } from "../types/profile";
+import { SocialCard } from "../components/SocialCard";
 
 export function ProfilePage({ data = profile }: { data?: Profile }) {
   const [message, setMessage] = useState("");
@@ -79,25 +70,4 @@ export function ProfilePage({ data = profile }: { data?: Profile }) {
     </main>
     <div className={`toast${message ? " is-visible" : ""}`} role="status" aria-live="polite">{message}</div>
   </>;
-}
-
-export function NotFoundPage() {
-  useEffect(() => {
-    document.title = `Página não encontrada | ${profile.name}`;
-    const meta = document.createElement("meta");
-    meta.name = "robots";
-    meta.content = "noindex";
-    document.head.append(meta);
-    return () => meta.remove();
-  }, []);
-  return <main className="not-found">
-    <span>ERRO 404</span>
-    <h1>Este link não está por aqui.</h1>
-    <p>O endereço pode ter mudado. Volte ao perfil para encontrar todas as redes disponíveis.</p>
-    <a href="/">Voltar ao perfil</a>
-  </main>;
-}
-
-export function App() {
-  return location.pathname === "/" || location.pathname === "/index.html" ? <ProfilePage /> : <NotFoundPage />;
 }

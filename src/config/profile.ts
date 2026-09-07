@@ -1,22 +1,6 @@
-// Edite somente este objeto para personalizar nome, descrição e destinos.
-export type SocialIcon = "instagram" | "linkedin" | "github";
+import type { Profile } from "../types/profile";
 
-export interface SocialLink {
-  label: string;
-  url: `https://${string}`;
-  icon: SocialIcon;
-  caption?: string;
-}
-
-export interface Profile {
-  name: string;
-  role: string;
-  bio: string;
-  location: string;
-  tag?: string | null;
-  links: SocialLink[];
-}
-
+// Edite este objeto para personalizar o perfil.
 export const profile: Profile = {
   name: "Isaias Oliveira",
   role: "TECNOLOGIA",
@@ -26,14 +10,14 @@ export const profile: Profile = {
   tag: null,
   links: [
     {
-      label: "Instagram",
-      url: "https://www.instagram.com/isaiasroliveira",
-      icon: "instagram",
-    },
-    {
       label: "LinkedIn",
       url: "https://www.linkedin.com/in/isaiasroliveira",
       icon: "linkedin",
+    },
+    {
+      label: "Instagram",
+      url: "https://www.instagram.com/isaiasroliveira",
+      icon: "instagram",
     },
     {
       label: "GitHub",

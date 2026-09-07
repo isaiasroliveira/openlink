@@ -4,6 +4,14 @@ All notable changes to this project are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] - 2026-09-07
+
+### Changed
+
+- Organized application code under `src/` with separate pages, components, configuration, types, styles and tests.
+- Updated development tooling and documentation for the new paths.
+- Preserved existing profile content and sharing behavior.
+
 ## [1.3.0] - 2026-09-07
 
 ### Added

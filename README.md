@@ -4,7 +4,7 @@ Página pessoal estática inspirada em um perfil fotográfico, pronta para publi
 
 ## Personalização
 
-Edite `profile.ts` para alterar nome, descrição, localização e links. Substitua `public/assets/eu.png` para trocar a fotografia mantendo o mesmo nome de arquivo.
+Edite `src/config/profile.ts` para alterar nome, descrição, localização e links. Substitua `public/assets/eu.png` para trocar a fotografia mantendo o mesmo nome de arquivo.
 
 ### Tag opcional
 
@@ -33,7 +33,29 @@ npm run dev
 
 O código usa React e TypeScript em modo estrito. Vite atualiza a página durante o desenvolvimento. `npm run build` verifica os tipos e gera a versão de produção em `dist/`; `npm run preview` permite conferir esse resultado localmente.
 
-A interface fica em `App.tsx`, os ícones em `icons.tsx` e a inicialização em `main.tsx`. O arquivo `index.html` contém apenas o ponto de entrada e os metadados. `style.css` define os estilos; o navegador recebe JavaScript compilado no build.
+A aplicação fica em `src/`. O arquivo `index.html` contém o ponto de entrada e os metadados; o navegador recebe JavaScript compilado no build.
+
+```text
+src/
+├── main.tsx
+├── App.tsx
+├── pages/
+│   ├── ProfilePage.tsx
+│   └── NotFoundPage.tsx
+├── components/
+│   ├── SocialCard.tsx
+│   └── SocialIcon.tsx
+├── config/
+│   └── profile.ts
+├── types/
+│   └── profile.ts
+├── styles/
+│   └── global.css
+└── tests/
+    └── App.test.tsx
+```
+
+`App.tsx` seleciona a página. As páginas compõem a interface; os componentes representam elementos reutilizáveis. A configuração pessoal fica separada dos tipos. O compartilhamento permanece em `ProfilePage.tsx`.
 
 ## Validação
 
@@ -41,7 +63,7 @@ A interface fica em `App.tsx`, os ícones em `icons.tsx` e a inicialização em 
 npm run check
 ```
 
-Os testes em `tests/App.test.tsx` verificam renderização, campos opcionais, destinos dos links, compartilhamento e página 404. `npm run typecheck` verifica os tipos, e `npm test` executa somente os testes.
+Os testes em `src/tests/App.test.tsx` verificam renderização, campos opcionais, destinos dos links, compartilhamento e página 404. `npm run typecheck` verifica os tipos, e `npm test` executa somente os testes.
 
 ## Versões
 

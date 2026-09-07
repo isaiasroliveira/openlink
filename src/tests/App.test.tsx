@@ -1,7 +1,8 @@
 import { afterEach, expect, test, vi } from "vitest";
 import { cleanup, render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { ProfilePage, NotFoundPage } from "../App";
-import { profile } from "../profile";
+import { ProfilePage } from "../pages/ProfilePage";
+import { NotFoundPage } from "../pages/NotFoundPage";
+import { profile } from "../config/profile";
 
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 

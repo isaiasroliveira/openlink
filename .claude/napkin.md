@@ -12,7 +12,7 @@
 
 ## Domain Behavior Guardrails
 1. **[2026-09-07] Profile content belongs in one configuration object**
-   Do instead: edit identity and social destinations in `profile.ts` without touching markup or styles.
+   Do instead: edit identity and social destinations in `src/config/profile.ts`; keep shared types in `src/types/profile.ts`.
 
 ## User Directives
 1. **[2026-09-07] Use atomic English commits without agent attribution**

@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import type { SocialIcon } from "./profile";
+import type { SocialIcon } from "../types/profile";
 
 const icons: Record<SocialIcon, ReactElement> = {
 instagram: (<svg viewBox="0 0 24 24">
