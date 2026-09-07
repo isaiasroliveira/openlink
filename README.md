@@ -2,6 +2,18 @@
 
 Página pessoal estática inspirada em um perfil fotográfico, pronta para publicação na Vercel.
 
+## Visualização
+
+### Desktop
+
+![Perfil pessoal exibido em uma tela desktop](docs/screenshots/profile-desktop.png)
+
+### Mobile
+
+<p align="center">
+  <img src="docs/screenshots/profile-mobile.png" width="390" alt="Perfil pessoal exibido em uma tela mobile" />
+</p>
+
 ## Personalização
 
 Edite `src/config/profile.ts` para alterar nome, descrição, localização e links. Substitua `public/assets/eu.png` para trocar a fotografia mantendo o mesmo nome de arquivo.
